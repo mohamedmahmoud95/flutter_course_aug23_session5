@@ -13,6 +13,11 @@ class _AlertDialogExampleScreenState extends State<AlertDialogExampleScreen> {
   String email = "test@gmail.com";
   String password = "12345678";
 
+  String userInput = '';
+  String correctValue = "1234";
+
+  TextEditingController _newController = TextEditingController();
+
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
@@ -95,22 +100,42 @@ class _AlertDialogExampleScreenState extends State<AlertDialogExampleScreen> {
                   if (_emailController.text == email &&
                       _passwordController.text == password) {
                     _showSnackBar(context, "Login success");
-                  } else {
-                    showDialog(
-                      context: context,
-                      builder: (context) => AlertDialog(
-                        title: const Text("Login error"),
-                        content: const Text("Invalid email or password"),
-                        actions: [
-                          ElevatedButton(
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                              child: const Text("ok")),
-                        ],
-                      ),
-                    );
                   }
+                  else
+                    {
+                      showDialog(context: context, builder: (context) =>
+                      AlertDialog(
+                        backgroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        title: Text("Login error"),
+                        content: Text("invalid email or password"),
+                        actions: [
+
+                              TextButton(onPressed: (){
+                                Navigator.of(context).pop();
+                              }, child: Text("ok")),
+                        ],
+
+                      ));
+                    }
+                  // else {
+                  //   showDialog(
+                  //     context: context,
+                  //     builder: (context) => AlertDialog(
+                  //       title: const Text("Login error"),
+                  //       content: const Text("Invalid email or password"),
+                  //       actions: [
+                  //         ElevatedButton(
+                  //             onPressed: () {
+                  //               Navigator.of(context).pop();
+                  //             },
+                  //             child: const Text("ok")),
+                  //       ],
+                  //     ),
+                  //   );
+                  // }
                 },
                 style: ElevatedButton.styleFrom(
                   shape: const StadiumBorder(),
@@ -119,6 +144,9 @@ class _AlertDialogExampleScreenState extends State<AlertDialogExampleScreen> {
                 ),
                 child: const Text("Login"),
               ),
+
+
+
             ],
           ),
         ),
