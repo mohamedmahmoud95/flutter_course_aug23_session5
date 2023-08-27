@@ -99,14 +99,14 @@ class _AlertDialogExampleScreenState extends State<AlertDialogExampleScreen> {
                     showDialog(
                       context: context,
                       builder: (context) => AlertDialog(
-                        title: Text("Login error"),
-                        content: Text("Invalid email or password"),
+                        title: const Text("Login error"),
+                        content: const Text("Invalid email or password"),
                         actions: [
                           ElevatedButton(
                               onPressed: () {
                                 Navigator.of(context).pop();
                               },
-                              child: Text("ok")),
+                              child: const Text("ok")),
                         ],
                       ),
                     );

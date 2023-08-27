@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_session_5/screens/BottomSheetExampleScreen.dart';
 import 'package:flutter_session_5/screens/alert%20dialog%20example/alert%20dialog%20example.dart';
+import 'package:flutter_session_5/screens/snack-bar%20example%20screen.dart';
 
 void main()
 {
@@ -21,7 +22,8 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home:
       //BottomSheetExampleScreen(),
-      AlertDialogExampleScreen(),
+      SnackBarExampleScreen(),
+      //AlertDialogExampleScreen(),
     );
   }
 }
